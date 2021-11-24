@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/client/public/css/main.css">
+  
+  <title>E-commerce product page</title>
+
+<script defer src="main.js"></script></head>
+<body>
+<!-- #starting the header section -->
+<header>
+<!-- #starting the navbar -->
+  <nav class="navbar navbar-expand-lg py-0 py-lg-2 ">
+   <div class="nav-container container-lg px-4 px-lg-3 py-3 border-bottom justify-content-between">
+     <div class="left-menu d-flex">
+      <button class="navbar-toggler navbar-light pt-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>  
+      <a class="navbar-brand me-4 me-lg-4 " href="#">
+          <img class="img-fluid" src="./images/logo.svg" alt="logo">
+        </a>
+        
+
+     </div>
+      <div class="right-list order-lg-3 justify-content-end text-end">
+        
+          <a class="btn position-relative p-0"> 
+            <img class="cart-icon" src="./images/icon-cart.svg" width="23"  alt="cart-icon">
+             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill">
+            <div class="num-items">0</div>
+            <span class="visually-hidden">You have items in your cart</span>
+          </span></a>
+       
+          <img src="./images/image-avatar.png" class="icon-avatar"  width="25%" alt="profile-image">
+        </div>
+        <div class="collapse navbar-collapse order-lg-2 flex-grow-0" id="navbarNav">
+          <ul class="navbar-nav ">
+            <li class="nav-item">
+              <a class="nav-link  active" aria-current="page" href="#">Collections</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Men</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Women</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </nav>
+</header>
+<!-- ################################################################################################################################
+               cart items showed and hid on clicking 
+################################################################################################################################ -->
+<div class="cart-container container-lg ">
+  <div class="row row1 justify-content-lg-end justify-content-center align-items-top">
+    <div class="card px-0">
+      <div class="card-header bg-white">
+        <h5 class="fw-bold mb-0">Cart</h5>
+      </div>
+      <div class="card-body card-empty">
+        <p class="card-text text-center fw-bold">Your cart is empty.</p>
+      </div>
+      <div class="card-body card-full">
+        <div class="row row2 justify-content-around align-items-start">
+          <div class="col-2 p-0 item-img pe-0 rounded-3">
+            
+            <img class="img-fluid rounded-3" src="./images/image-product-1-thumbnail.jpg" alt="prdouct to buy">
+          </div>
+          <div class="col-8 pe-0">
+            <p class="lead mb-1">Fall Limited Edition Sneakers</p>
+            <p>$<span class="i-price me-2">125</span>x<span class="i-num mx-2">3</span><span class="total fw-bold text-dark">$375.00</span></p>
+          </div>
+          <div class="col-1 p-0 align-self-center delete">
+            <img src="./images/icon-delete.svg" alt="">
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ################################################################################################################################
+               cart items showed and hid on clicking  finsihed
+################################################################################################################################ -->
+
+<!-- ####################################
+finishing the header
+#################################### -->
+
+<!-- ################################################################################################################################
+ here am going to make the modal for showing the carts
+ ############################################################################################################################### -->
+ <div class="modal fade" id="lightbox" tabindex="-1" aria-labelledby="lightbox1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered ">
+    <div class="modal-content customize-modal-bg">
+      <h1 type="button" class="align-self-end" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-type-bold bi-x"></i></h1>
+      <div class="modal-body p-0">
+        <div class="container-fluid p-0">
+          <div class="row justify-content-around align-items-center product-container">
+            <div class="product-images">
+              <div class="product-big-image slide ">
+                <div class="arrow-next"></div>
+                <img class="img-fluid " src="./images/image-product-1.jpg" alt="main-product-image">
+                <div class="arrow-prev"></div>
+              </div>
+              <div class="product-big-image slide">
+                <div class="arrow-next"></div>
+                <img class="img-fluid" src="./images/image-product-2.jpg" alt="main-product-image" >
+                <div class="arrow-prev"></div>
+              </div>
+              <div class="product-big-image slide">
+                <div class="arrow-next"></div>
+                <img class="img-fluid" src="./images/image-product-3.jpg" alt="main-product-image" >
+                <div class="arrow-prev"></div>
+              </div>
+              <div class="product-big-image slide">
+                <div class="arrow-next"></div>
+                <img class="img-fluid" src="./images/image-product-4.jpg" alt="main-product-image" >
+                <div class="arrow-prev"></div>
+              </div>
+              <div class="product-thumbnails row px-5 pt-2 justify-content-between align-items-center">
+                <div class="col-3 product-thumbnail">
+                 <div class="img-cover active"> 
+                  <img src="./images/image-product-1-thumbnail.jpg" alt="product-1-thumb" class="img-fluid">
+                 </div>
+                </div>
+                <div class="col-3 product-thumbnail">
+                 <div class="img-cover">
+                  <img src="./images/image-product-2-thumbnail.jpg" alt="product-2-thumb" class="img-fluid">
+                 </div>
+                </div>
+                <div class="col-3 product-thumbnail">
+                 <div class="img-cover">
+                  <img src="./images/image-product-3-thumbnail.jpg" alt="product-3-thumb" class="img-fluid">
+                 </div>
+                </div>
+                <div class="col-3 product-thumbnail">
+                 <div class="img-cover">
+                  <img src="./images/image-product-4-thumbnail.jpg" alt="product-4-thumb" class="img-fluid">
+                 </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ################################################################################################################################
+      finishing the modal for showing the carts
+ ############################################################################################################################### -->
+
+<!-- ####################################
+starting the main
+#################################### -->
+<main>
+  <section id="product">
+    <div class="product-container container-lg p-0 p-lg-auto ">
+    <div class="row justify-content-around align-items-center">
+        <div class="product-images col-lg-5 col-xxl-6 px-lg-5">
+          <div class="product-big-image main-one">
+            <a class="btn border-0 p-0" data-bs-toggle="modal" data-bs-target="#lightbox">
+              <div class="arrow-next"></div>
+                <img class="img-fluid" src="./images/image-product-1.jpg" alt="main-product-image" >
+              <div class="arrow-prev"></div>
+            </a>
+          </div>
+          <div class="product-thumbnails d-none d-lg-block  ">
+           <div class="row  justify-content-between align-items-center">
+            <div class="col-3 product-thumbnail">
+             <a class="btn border-0 p-0" data-bs-toggle="modal" data-bs-target="#lightbox">
+              <div class="img-cover thumb active"> 
+              
+              <img src="./images/image-product-1-thumbnail.jpg" alt="product-1-thumb" class="img-fluid ">
+             
+             </div>
+             </a>
+            </div>
+            <div class="col-3 product-thumbnail">
+             <a class="btn border-0 p-0" data-bs-toggle="modal" data-bs-target="#lightbox">
+              <div class="img-cover thumb">
+              <img src="./images/image-product-2-thumbnail.jpg" alt="product-2-thumb" class="img-fluid ">
+             </div>
+             </a>
+            </div>
+            <div class="col-3 product-thumbnail">
+             <a class="btn border-0 p-0" data-bs-toggle="modal" data-bs-target="#lightbox">
+              <div class="img-cover thumb">
+              <img src="./images/image-product-3-thumbnail.jpg" alt="product-3-thumb" class="img-fluid ">
+             </div>
+             </a>
+            </div>
+            <div class="col-3 product-thumbnail">
+             <a class="btn border-0 p-0" data-bs-toggle="modal" data-bs-target="#lightbox">
+              <div class="img-cover thumb">
+              <img src="./images/image-product-4-thumbnail.jpg" alt="product-4-thumb" class="img-fluid ">
+             </div>
+             </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-desc pt-4 pt-lg-auto col-lg-6 pe-3 ps-5">
+        <div class="desc-text pe-4">
+          <small class="company fw-bold text-uppercase">Sneaker Company</small>
+          <h4 class="display-6 fw-bold py-3">Fall Limited Edition Sneakers</h4>
+          <p class=" pb-3">These low-profile sneakers are your perfect casual wear companion. Featuring a 
+            durable rubber outer sole, they’ll withstand everything the weather can offer.
+          </p>
+          <div class="clear-fix" style="clear: both"></div>
+          <h4 class="fw-bold d-flex align-items-center mb-3 price">$ 125.00 <span class="badge discount ms-3">50%</span></h4>
+          <small class="b-discount fw-bold text-decoration-line-through">$ 250.00</small>
+          <div class="clear-fix" style="clear: both"></div>
+          <div class="price-quant row ">
+            <div class="col-lg-4 pb-3 pb-lg-0">
+                <div class="quant d-flex flex-row justify-content-between align-items-center px-3 py-3 ">
+                  <svg class="minus" width="12" height="4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z" id="a"/></defs><use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#a"/></svg>
+                  <small class="fw-bold">0</small>
+                  <svg class="plus" width="12" height="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z" id="b"/></defs><use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#b"/></svg>
+                </div>
+              </div>
+              <div class="col-lg-8 d-grid gap-0 mx-auto  cart-button pt-1 pt-lg-0">
+                <button class="text-nowrap mx-lg-auto text-center py-3 ">
+                  <i class="bi bi-cart3 me-2" width="16"  ></i>
+                   Add to cart
+                </button>
+              </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   </div>
+  </section>
+</main>
+<!-- ############################################################################################################################
+      //  finsished the main part i hope you liked it
+############################################################################################################################ -->
+<footer class="footer text-center py-4 py-lg-2 ">
+  <p class="small text-muted">@ made by M.Ameen</p>
+</footer>
+
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="./src/client/public/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+
+@mixin for-size($size) {
+    @if $size == xs-phone{
+      @media  (max-width: 427px){ @content; }
+    } @else if $size == lg-phone {
+      @media (min-width: 428px) and (max-width: 595px) { @content; }
+    } @else if $size == tablet-portrait-up {
+      @media (min-width: 600px) { @content; }
+    } @else if $size == tablet-landscape-up {
+      @media (min-width: 900px) { @content; }
+    } @else if $size == desktop-up {
+      @media (min-width: 1024px) { @content; }
+    } @else if $size == big-desktop-up {
+      @media (min-width: 1800px) { @content; }
+    } @else if $size == mobile-to-tablet {
+      @media (max-width: 900px) { @content; }
+      }@else if $size == all-desktops {
+        @media (min-width: 1024px) { @content; }
+      }@else if $size == lg-to-xl-desktops {
+        @media (min-width: 1024px) and (max-width: 1380px) { @content; }
+      } @else if $size == up-to-lg-phone {
+        @media  (max-width: 428px) { @content; }
+      }
+    
+  }

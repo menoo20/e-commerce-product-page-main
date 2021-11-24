@@ -1,0 +1,25 @@
+@import "variables";
+@import "mixins";
+body,html{
+    font-family: 'Kumbh Sans', sans-serif;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+section{
+    padding:5rem 0 ;
+}
+
+.badge{
+    font-size: $badge-font-size;
+    padding: $badge-padding-y $badge-padding-x
+    
+}
+
+.container-lg{
+    max-width:1120px;
+}

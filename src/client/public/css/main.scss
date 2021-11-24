@@ -1,0 +1,457 @@
+@import "global";
+@import "variables";
+
+
+nav{
+    .left-menu{
+        @include for-size(up-to-lg-phone){
+            max-width:185px;
+        }
+    }
+    .navbar-toggler{
+        font-size:inherit;
+        .navbar-toggler-icon{
+            width: 1em;
+            height: 1em;
+        }
+        &:focus{
+            box-shadow: none;
+            
+        }
+    }
+    a.navbar-brand{
+        padding-top:0.2rem;
+       img{
+           vertical-align: 0%;
+       }
+    }
+    #navbarNav{
+      ul{
+          .nav-item{
+              padding-left: .9375rem ;
+              a{
+                  position: relative;
+                  font-size:0.7875rem;
+                  color:#6c757d;
+                  &:hover, &:focus, &.active{
+                      color: $Orange;
+                  }
+                  &:after{
+                    position: absolute;
+                    content: "";
+                    width: 100%;
+                    height: 4px;
+                    background-color: transparent;
+                    bottom: -1.5625rem;
+                    left: 0;
+                    transition: background-color .3s ease-in-out;
+                    @include for-size(mobile-to-tablet){
+                     display:none;
+                    }
+                }
+                 
+                  &:hover:after, &:focus:after, &.active:after{
+                      position: absolute;
+                      content: "";
+                      width: 100%;
+                      height: 4px;
+                      background-color: $Orange;
+                      bottom: -1.5625rem;
+                      left: 0;
+                      transition: background-color .3s ease-in-out;
+                  }
+              }
+              
+          }
+      }
+    }
+    .right-list{
+        @include for-size(up-to-lg-phone){
+            max-width: 125px;
+        }
+      a{
+          span{
+              background-color: $Orange;
+              font-size: 0.65em;
+              padding: 0.30em 0.76em;
+              display: none;
+          }
+      }  
+        img{
+            margin-left: 2.5rem ;
+            @include for-size(up-to-lg-phone){
+                margin-left:0;
+            }
+            cursor: pointer;
+            &.icon-avatar{
+                outline: 3px solid white;
+                border-radius:50%;
+                transition: outline 0.3s ease-in-out;
+                @include for-size(mobile-to-tablet){
+                    margin-left: 30px;
+                }
+            }
+            &.icon-avatar:hover{
+                outline: 3px solid $Orange;
+                border-radius:50%;
+                transition: outline 0.3s ease-in-out;
+           
+            }
+        }
+    }
+}
+
+.cart-container{
+    position: relative;
+    
+    div.row1{
+        position: absolute;
+        top: 0;
+        right: 1%;
+        z-index: 2;
+        @include for-size(mobile-to-tablet){
+            right:0;
+            left: 0;
+            top:1rem;
+        }
+    .card{
+        top:-21px;
+        width: 22.5rem;
+        height:16.5rem;
+        box-shadow: 2px 24px 32px -3px rgba(0, 0, 0, .17);
+        border: 0;
+        border-radius: 10px;
+        display: none;
+        @include for-size(mobile-to-tablet){
+            top:0;
+            width: 90%;
+            height:18rem;
+        }
+        .card-header{
+            padding: 1.79rem 1rem;
+            h5{
+                font-size:0.7875rem
+            }
+        }
+        .card-body{
+            p{
+                color:$Dark-grayish-blue;
+                font-size: 1rem;
+            }
+            &.card-empty{
+                line-height: 9.7rem;
+                
+              
+               }
+
+            &.card-full{
+                display: none;
+                .delete{
+                    cursor: pointer;
+                }
+            }
+        }
+       
+    }
+    
+}
+}
+// ############################################################################################################
+//product-images  (this section is general and shouldn't be put inside a section as i used the same classes
+//  and content to make the images of the modal
+// ############################################################################################################
+  
+#product{
+    @include for-size(mobile-to-tablet){
+        padding:0;
+    }
+    @include for-size(lg-to-xl-desktops){
+        padding:30px 0 60px 0;
+    }
+    .product-container{
+       
+        .product-images{
+            img{
+                border-radius:.625rem;
+                cursor: pointer;
+                @include for-size(mobile-to-tablet){
+                 border-radius:0;
+                }
+            }
+
+            .product-big-image{
+               a{
+                position: relative;
+                
+                .arrow-next,.arrow-prev{
+                    position: absolute;
+                    content: "";
+                    background-color: #fff;
+                    background-size: 30%;
+                    background-repeat: no-repeat;
+                    width:55.5px;
+                    height:55.5px;
+                    border: 1px solid #fff;
+                    top: calc(50% - 33px/2);
+                    cursor: pointer;
+                    transition: background-image 0.2s ease-in-out;
+                    border-radius: 50%;
+                    @include for-size(desktop-up){
+                        display: none;
+                    }
+                }
+                .arrow-prev{
+                  background-image: url(../../../../images/icon-previous.svg);
+                  background-position: 44% center;
+                  left: -28px;
+                  @include for-size(mobile-to-tablet){
+                      left:4%
+                  }
+                  &:hover {
+                    background-image: url(../../../../images/icon-previous-Hover.svg);
+                    transition: background-image 0.2s ease-in-out;
+                  }
+                }
+                .arrow-next{
+                    background-image: url(../../../../images/icon-next.svg);
+                    background-position: 54% center;
+                    right: -28px;
+                    @include for-size(mobile-to-tablet){
+                        right:4%
+                    }
+                    &:hover {
+                        background-image: url(../../../../images/icon-next-Hover.svg);
+                        transition: background-image 0.2s ease-in-out;
+                      }
+                  }
+               }
+            }
+        
+            .product-thumbnails{
+                margin-top: 1.875rem;
+                @include for-size(lg-to-xl-desktops){
+                    margin-top: 1rem;
+                }
+                .product-thumbnail{
+                    .img-cover{
+                        position: relative;
+                        border-radius:.625rem;
+                        cursor: pointer;
+                        &::after{
+                            content:"";
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            border-radius:.625rem;
+                            background-color: $White;
+                            opacity: 0;
+                            transition: all .3s ease-in-out;
+                        }
+                        &.active::after, &:hover:after{
+                            opacity: 0.5;
+                            transition: all .3s ease-in-out;
+                        }
+                        &.active img{
+                            outline: 3px solid $Orange
+                        }
+                    }
+                    }
+                }
+    }
+    
+        }
+    
+    
+    .product-desc{
+        .desc-text{
+        p{
+            color: $Dark-grayish-blue;
+        }
+        small.b-discount{
+           
+               color: $Grayish-blue;
+      
+        }
+        .company{
+            color: $Orange;
+        }
+        h4.price {
+            .badge{
+              color: $Orange;
+              background-color: $Pale-orange;
+            }
+        }
+        .price-quant{
+         margin-top:30px;
+        .quant{
+            background-color: $Light-grayish-blue;
+            border-radius:10px;
+            
+            svg{
+                cursor: pointer;
+                transition: opacity 0.2s ease-in-out;
+                &:hover{
+                opacity: 0.7;
+                transition: opacity 0.2s ease-in-out;
+            }
+             
+            }
+    
+        }
+        .cart-button{
+            button{
+                padding: 1rem 6.5rem;
+                font-size:0.825rem;
+                color:$White;
+                background-color:$Orange;
+                border-radius:10px;
+                border:0;
+                font-weight: 700;
+                box-shadow:0 20px 35px -15px rgba(255, 125, 26,.6);;
+                transition: opacity 0.2s ease-in-out;
+                @include for-size(mobile-to-tablet){
+                    font-size:1rem;
+                }
+                &:hover{
+                    opacity: 0.7;
+                    transition: opacity 0.3s ease-in-out;
+                }
+
+                i{
+                    font-size:0.8rem;
+                    @include for-size(mobile-to-tablet){
+                        font-size:1rem;
+                    }
+                }
+            }
+        }
+    }
+    }
+    }
+}  
+   
+// ############################################################################################################
+//product-images  (this section is general and shouldn't be put inside a section as i used the same classes
+//  and content to make the images of the modal
+// ############################################################################################################
+ 
+
+
+// ############################################################################################################
+// modal styling
+// ############################################################################################################
+  .modal{
+      background-color: $lightbox-black;
+      .modal-dialog{
+          max-width: 554px;
+          @include for-size(lg-to-xl-desktops){
+              max-width: 420px;
+          }
+          .modal-content{
+            img{
+                border-radius:.625rem;
+                cursor: pointer;
+                @include for-size(mobile-to-tablet){
+                 border-radius:0;
+                }
+            }
+                background-color:transparent;
+                border: 0;
+                h1{
+                    // &.btn-close
+                    i{
+                    font-size:3.4rem;
+                    padding:0;
+                    color: #fff;
+                    &:hover{
+                        color: $Orange;
+                    }
+                    &.bi::before {
+                      width:2.6875rem;
+                    }
+                }
+                }
+                .product-big-image{
+                    display: none;
+                    position: relative;
+                    &.active{
+                        display: block;
+                    }
+                    .arrow-next,.arrow-prev{
+                        position: absolute;
+                        content: "";
+                        background-color: #fff;
+                        background-size: 30%;
+                        background-repeat: no-repeat;
+                        width:55.5px;
+                        height:55.5px;
+                        border: 1px solid #fff;
+                        top: calc(50% - 33px/2);
+                        cursor: pointer;
+                        transition: background-image 0.2s ease-in-out;
+                        border-radius: 50%;
+                    }
+                    .arrow-prev{
+                      background-image: url(../../../../images/icon-previous.svg);
+                      background-position: 44% center;
+                      left: -28px;
+                      @include for-size(mobile-to-tablet){
+                          left:4%
+                      }
+                      &:hover {
+                        background-image: url(../../../../images/icon-previous-Hover.svg);
+                        transition: background-image 0.2s ease-in-out;
+                      }
+                    }
+                    .arrow-next{
+                        background-image: url(../../../../images/icon-next.svg);
+                        background-position: 54% center;
+                        right: -28px;
+                        @include for-size(mobile-to-tablet){
+                            right:4%
+                        }
+                        &:hover {
+                            background-image: url(../../../../images/icon-next-Hover.svg);
+                            transition: background-image 0.2s ease-in-out;
+                          }
+                      }
+                  
+                   
+                }
+                .product-thumbnails{
+                    margin-top: 1.875rem;
+                    .product-thumbnail{
+                        .img-cover{
+                            position: relative;
+                            border-radius:.625rem;
+                            cursor: pointer;
+                            &::after{
+                                content:"";
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                border-radius:.625rem;
+                                background-color: $White;
+                                opacity: 0;
+                                transition: all .3s ease-in-out;
+                                @include for-size(mobile-to-tablet){
+                                    border-radius:0;
+                                }
+                            }
+                            &.active::after, &:hover:after{
+                                opacity: 0.5;
+                                transition: all .3s ease-in-out;
+                            }
+                            &.active img{
+                                outline: 3px solid $Orange
+                            }
+                        }
+                        }
+                    }
+          }
+      }
+  }

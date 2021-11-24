@@ -1,0 +1,2 @@
+/*! For license information please see src_client_public_css_main_css.js.LICENSE.txt */
+"use strict";(self.webpackChunke_commercer_product_page_main=self.webpackChunke_commercer_product_page_main||[]).push([["src_client_public_css_main_css"],{"./src/client/public/css/main.css":(c,e,s)=>{s.r(e)}}]);
