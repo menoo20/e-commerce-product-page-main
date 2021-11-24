@@ -19,7 +19,7 @@
 <p align="center"> e-commerce product main page
     <br> 
 </p>
-<img width=800px align="center"  src="https://res.cloudinary.com/dz209s6jk/image/upload/q_auto:good,w_900/Challenges/bognvsqd34ueowkompeh.jpg" alt="Project pic">
+<img width=100% align="center"  src="https://res.cloudinary.com/dz209s6jk/image/upload/q_auto:good,w_900/Challenges/bognvsqd34ueowkompeh.jpg" alt="Project pic">
 
 
 ## 📝 Table of Contents
