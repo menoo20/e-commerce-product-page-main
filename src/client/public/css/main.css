@@ -420,6 +420,10 @@ nav .right-list img.icon-avatar:hover {
   border: 0;
 }
 
+.modal .modal-dialog .modal-content h1 {
+  cursor: pointer;
+}
+
 .modal .modal-dialog .modal-content img {
   border-radius: .625rem;
   cursor: pointer;
