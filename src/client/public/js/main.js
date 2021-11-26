@@ -136,6 +136,15 @@ $( document ).ready(
          cardFull.show();
 
        }
+       $(".delete").click(function(){
+          cardFull.hide();
+          value= 0;
+         numItems.text(value);
+         badge.hide();
+          cardEmpty.show();
+         
+      
+       });
      });
      
      
